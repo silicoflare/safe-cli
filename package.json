@@ -1,9 +1,14 @@
 {
   "name": "safe-cli",
   "module": "safe-cli.ts",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "bun build --compile --minify safe.ts --outfile ./dist/safe"
+    "build-exec": "bun build --compile --minify safe.ts --outfile ./dist/safe",
+    "build": "bun build --minify safe.ts --outdir ./dist"
+  },
+  "bin": {
+    "safe": "dist/safe.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
